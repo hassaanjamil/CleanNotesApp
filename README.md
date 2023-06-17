@@ -9,3 +9,6 @@ The repository is intended to give a brief idea of Clean Architecture (incl. the
 - Coroutine + Flow
 - Room
 - Kotlin (Sealed classes, operator function)
+
+## Screenshots
+<img src="Screenshot1.png"  width="20%" height="10%"> &nbsp;&nbsp;&nbsp;&nbsp; <img src="Screenshot2.png"  width="20%" height="10%">
