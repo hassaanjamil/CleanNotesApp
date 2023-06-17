@@ -1,5 +1,5 @@
 # CLEAN NOTES ANDROID APP
-> This repository is originally written by Philipp Lackner, it is just a clone of the latest configurations and tweaks.
+> This repository is originally written by [Philipp Lackner](https://github.com/philipplackner), it is just a [clone](https://github.com/philipplackner/CleanArchitectureNoteApp), having latest configurations and tweaks.
 
 
 The repository is intended to give a brief idea of Clean Architecture (incl. the Domain layer) along with other Android advanced components as mentioned below:
