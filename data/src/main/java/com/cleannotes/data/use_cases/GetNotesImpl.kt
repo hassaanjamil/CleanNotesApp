@@ -1,4 +1,4 @@
-package com.app.cleannotesapp.feature_note.data.use_cases
+package com.cleannotes.data.use_cases
 
 import com.cleannotes.domain.model.Note
 import com.cleannotes.domain.repository.NoteRepository

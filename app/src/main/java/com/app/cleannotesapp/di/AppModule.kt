@@ -2,12 +2,12 @@ package com.app.cleannotesapp.di
 
 import android.app.Application
 import androidx.room.Room
-import com.app.cleannotesapp.feature_note.data.data_source.NoteDatabase
-import com.app.cleannotesapp.feature_note.data.repository.NoteRepositoryImpl
-import com.app.cleannotesapp.feature_note.data.use_cases.AddNoteImpl
-import com.app.cleannotesapp.feature_note.data.use_cases.DeleteNoteImpl
-import com.app.cleannotesapp.feature_note.data.use_cases.GetNoteImpl
-import com.app.cleannotesapp.feature_note.data.use_cases.GetNotesImpl
+import com.cleannotes.data.data_source.NoteDatabase
+import com.cleannotes.data.repository.NoteRepositoryImpl
+import com.cleannotes.data.use_cases.AddNoteImpl
+import com.cleannotes.data.use_cases.DeleteNoteImpl
+import com.cleannotes.data.use_cases.GetNoteImpl
+import com.cleannotes.data.use_cases.GetNotesImpl
 import com.cleannotes.domain.repository.NoteRepository
 import com.cleannotes.domain.use_case.NoteUseCases
 import dagger.Module

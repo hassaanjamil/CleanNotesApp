@@ -1,4 +1,4 @@
-package com.app.cleannotesapp.feature_note.data.data_source
+package com.cleannotes.data.data_source
 
 import androidx.room.*
 import com.cleannotes.domain.model.Note
