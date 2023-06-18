@@ -10,5 +10,12 @@ The repository is intended to give a brief idea of Clean Architecture (incl. the
 - Room
 - Kotlin (Sealed classes, operator function)
 
+## Modules
+I have converted the **domain**, **data**, and **app (presentation)** layers into modules, you can find a brief description of these modules below:
+ - **common**: Module contains the common resources used in the layers.
+ - **domain**: Module contains an abstraction of the application e.g. repository, model, use cases, etc.
+ - **data**: Module contains business logic or implementation of domain layer, e.g., RepositoryImpl, UseCasesImpl, DataSource (DB), etc.
+ - **app**: Module contains presentation (UI) logic which is written in Kotlin using Jetpack Compose, and it consults the domain to call its use cases via ViewModels, and the domain consults data to help fetch data.
+
 ## Screenshots
 <img src="Screenshot1.png"  width="20%" height="10%"> &nbsp;&nbsp;&nbsp;&nbsp; <img src="Screenshot2.png"  width="20%" height="10%">
