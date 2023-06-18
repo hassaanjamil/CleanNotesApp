@@ -1,10 +1,10 @@
 package com.app.cleannotesapp.feature_note.data.use_cases
 
-import com.app.cleannotesapp.feature_note.domain.model.Note
-import com.app.cleannotesapp.feature_note.domain.repository.NoteRepository
-import com.app.cleannotesapp.feature_note.domain.use_case.GetNotes
-import com.app.cleannotesapp.feature_note.domain.util.NoteOrder
-import com.app.cleannotesapp.feature_note.domain.util.OrderType
+import com.cleannotes.domain.model.Note
+import com.cleannotes.domain.repository.NoteRepository
+import com.cleannotes.domain.use_case.GetNotes
+import com.cleannotes.domain.util.NoteOrder
+import com.cleannotes.domain.util.OrderType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

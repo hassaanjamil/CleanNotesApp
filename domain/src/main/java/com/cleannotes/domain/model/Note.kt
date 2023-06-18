@@ -1,8 +1,8 @@
-package com.app.cleannotesapp.feature_note.domain.model
+package com.cleannotes.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.app.cleannotesapp.ui.theme.*
+import com.cleannotes.common.*
 
 @Entity
 data class Note(

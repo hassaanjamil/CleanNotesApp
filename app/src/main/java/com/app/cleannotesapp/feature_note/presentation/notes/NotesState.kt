@@ -1,8 +1,8 @@
 package com.app.cleannotesapp.feature_note.presentation.notes
 
-import com.app.cleannotesapp.feature_note.domain.model.Note
-import com.app.cleannotesapp.feature_note.domain.util.NoteOrder
-import com.app.cleannotesapp.feature_note.domain.util.OrderType
+import com.cleannotes.domain.model.Note
+import com.cleannotes.domain.util.NoteOrder
+import com.cleannotes.domain.util.OrderType
 
 data class NotesState(
     val notes: List<Note> = emptyList(),

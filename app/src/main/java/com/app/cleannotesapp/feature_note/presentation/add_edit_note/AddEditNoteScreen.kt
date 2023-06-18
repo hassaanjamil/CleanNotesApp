@@ -23,8 +23,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.app.cleannotesapp.feature_note.domain.model.Note
 import com.app.cleannotesapp.feature_note.presentation.add_edit_note.components.TransparentHintTextField
+import com.cleannotes.domain.model.Note
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

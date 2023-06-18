@@ -6,9 +6,9 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.cleannotesapp.feature_note.domain.model.InvalidNoteException
-import com.app.cleannotesapp.feature_note.domain.model.Note
-import com.app.cleannotesapp.feature_note.domain.use_case.NoteUseCases
+import com.cleannotes.domain.model.InvalidNoteException
+import com.cleannotes.domain.model.Note
+import com.cleannotes.domain.use_case.NoteUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

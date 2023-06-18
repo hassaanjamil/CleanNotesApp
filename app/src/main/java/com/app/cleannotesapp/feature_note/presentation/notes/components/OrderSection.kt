@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.app.cleannotesapp.feature_note.domain.util.NoteOrder
-import com.app.cleannotesapp.feature_note.domain.util.OrderType
+import com.cleannotes.domain.util.NoteOrder
+import com.cleannotes.domain.util.OrderType
 
 @Composable
 fun OrderSection(

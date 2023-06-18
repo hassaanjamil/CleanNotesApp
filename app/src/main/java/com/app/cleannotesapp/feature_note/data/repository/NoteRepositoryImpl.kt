@@ -1,8 +1,8 @@
-package com.app.cleannotesapp.data.repository
+package com.app.cleannotesapp.feature_note.data.repository
 
 import com.app.cleannotesapp.feature_note.data.data_source.NoteDao
-import com.app.cleannotesapp.feature_note.domain.model.Note
-import com.app.cleannotesapp.feature_note.domain.repository.NoteRepository
+import com.cleannotes.domain.model.Note
+import com.cleannotes.domain.repository.NoteRepository
 import kotlinx.coroutines.flow.Flow
 
 class NoteRepositoryImpl(

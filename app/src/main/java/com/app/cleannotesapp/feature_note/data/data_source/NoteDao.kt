@@ -1,7 +1,7 @@
 package com.app.cleannotesapp.feature_note.data.data_source
 
 import androidx.room.*
-import com.app.cleannotesapp.feature_note.domain.model.Note
+import com.cleannotes.domain.model.Note
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -1,4 +1,4 @@
-package com.app.cleannotesapp.feature_note.domain.util
+package com.cleannotes.domain.util
 
 sealed class NoteOrder(val orderType: OrderType) {
     class Title(orderType: OrderType): NoteOrder(orderType)

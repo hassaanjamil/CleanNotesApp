@@ -1,4 +1,4 @@
-package com.app.cleannotesapp.feature_note.domain.use_case
+package com.cleannotes.domain.use_case
 
 data class NoteUseCases(
     val getNotes: GetNotes,

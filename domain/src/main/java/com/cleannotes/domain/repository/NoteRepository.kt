@@ -1,6 +1,6 @@
-package com.app.cleannotesapp.feature_note.domain.repository
+package com.cleannotes.domain.repository
 
-import com.app.cleannotesapp.feature_note.domain.model.Note
+import com.cleannotes.domain.model.Note
 import kotlinx.coroutines.flow.Flow
 
 interface NoteRepository {

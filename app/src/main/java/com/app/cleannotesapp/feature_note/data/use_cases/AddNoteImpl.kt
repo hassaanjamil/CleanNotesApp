@@ -1,9 +1,9 @@
 package com.app.cleannotesapp.feature_note.data.use_cases
 
-import com.app.cleannotesapp.feature_note.domain.model.InvalidNoteException
-import com.app.cleannotesapp.feature_note.domain.model.Note
-import com.app.cleannotesapp.feature_note.domain.repository.NoteRepository
-import com.app.cleannotesapp.feature_note.domain.use_case.AddNote
+import com.cleannotes.domain.model.InvalidNoteException
+import com.cleannotes.domain.model.Note
+import com.cleannotes.domain.repository.NoteRepository
+import com.cleannotes.domain.use_case.AddNote
 
 class AddNoteImpl(
     private val repository: NoteRepository

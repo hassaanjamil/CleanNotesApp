@@ -2,8 +2,7 @@ package com.app.cleannotesapp.feature_note.data.data_source
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.app.cleannotesapp.feature_note.data.data_source.NoteDao
-import com.app.cleannotesapp.feature_note.domain.model.Note
+import com.cleannotes.domain.model.Note
 
 @Database(
     entities = [Note::class],
