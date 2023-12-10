@@ -2,7 +2,6 @@ package com.app.cleannotesapp.feature_note.presentation.notes
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.*
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -17,10 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.app.cleannotesapp.feature_note.presentation.notes.components.NoteItem
 import com.app.cleannotesapp.feature_note.presentation.notes.components.OrderSection
 import com.app.cleannotesapp.feature_note.presentation.util.Screen
-import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @ExperimentalAnimationApi
@@ -90,33 +87,42 @@ fun NotesScreen(
             }
             Spacer(modifier = Modifier.height(16.dp))
             LazyColumn(modifier = Modifier.fillMaxSize()) {
-                items(state.notes) { note ->
-                    NoteItem(
-                        note = note,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable {
-                                navController.navigate(
-                                    Screen.AddEditNoteScreen.route +
-                                            "?noteId=${note.id}&noteColor=${note.color}"
-                                )
-                            },
-                        onDeleteClick = {
-                            viewModel.onEvent(NotesEvent.DeleteNote(note))
-                            scope.launch {
-                                val result = scaffoldState.snackbarHostState.showSnackbar(
-                                    message = "Note deleted",
-                                    actionLabel = "Undo"
-                                )
-                                if(result == SnackbarResult.ActionPerformed) {
-                                    viewModel.onEvent(NotesEvent.RestoreNote)
-                                }
-                            }
-                        }
+                items(state.currencies) { currency ->
+                    Text(
+                        text = "${currency.code}, ${currency.name}",
+                        style = MaterialTheme.typography.h6
                     )
-                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
+
+//            LazyColumn(modifier = Modifier.fillMaxSize()) {
+//                items(state.notes) { note ->
+//                    NoteItem(
+//                        note = note,
+//                        modifier = Modifier
+//                            .fillMaxWidth()
+//                            .clickable {
+//                                navController.navigate(
+//                                    Screen.AddEditNoteScreen.route +
+//                                            "?noteId=${note.id}&noteColor=${note.color}"
+//                                )
+//                            },
+//                        onDeleteClick = {
+//                            viewModel.onEvent(NotesEvent.DeleteNote(note))
+//                            scope.launch {
+//                                val result = scaffoldState.snackbarHostState.showSnackbar(
+//                                    message = "Note deleted",
+//                                    actionLabel = "Undo"
+//                                )
+//                                if(result == SnackbarResult.ActionPerformed) {
+//                                    viewModel.onEvent(NotesEvent.RestoreNote)
+//                                }
+//                            }
+//                        }
+//                    )
+//                    Spacer(modifier = Modifier.height(16.dp))
+//                }
+//            }
         }
     }
 }

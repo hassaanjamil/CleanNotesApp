@@ -4,6 +4,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.app.cleannotesapp.feature_note.data.data_source.remote.Currency
 import com.app.cleannotesapp.feature_note.domain.model.Note
 import com.app.cleannotesapp.feature_note.domain.use_case.NoteUseCases
 import com.app.cleannotesapp.feature_note.domain.util.NoteOrder
@@ -17,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NotesViewModel @Inject constructor(
-    private val noteUseCases: NoteUseCases
+    private val noteUseCases: NoteUseCases,
 ) : ViewModel() {
 
     private val _state = mutableStateOf(NotesState())
@@ -26,9 +27,12 @@ class NotesViewModel @Inject constructor(
     private var recentlyDeletedNote: Note? = null
 
     private var getNotesJob: Job? = null
+    private var getCurrenciesJob: Job? = null
 
     init {
         getNotes(NoteOrder.Date(OrderType.Descending))
+        getCurrencies()
+        //getCurrencyRates()
     }
 
     fun onEvent(event: NotesEvent) {
@@ -41,18 +45,21 @@ class NotesViewModel @Inject constructor(
                 }
                 getNotes(event.noteOrder)
             }
+
             is NotesEvent.DeleteNote -> {
                 viewModelScope.launch {
                     noteUseCases.deleteNote(event.note)
                     recentlyDeletedNote = event.note
                 }
             }
+
             is NotesEvent.RestoreNote -> {
                 viewModelScope.launch {
                     noteUseCases.addNote(recentlyDeletedNote ?: return@launch)
                     recentlyDeletedNote = null
                 }
             }
+
             is NotesEvent.ToggleOrderSection -> {
                 _state.value = state.value.copy(
                     isOrderSectionVisible = !state.value.isOrderSectionVisible
@@ -72,4 +79,26 @@ class NotesViewModel @Inject constructor(
             }
             .launchIn(viewModelScope)
     }
+
+    private fun getCurrencies() {
+        getCurrenciesJob?.cancel()
+        getCurrenciesJob = noteUseCases.getCurrencies()
+            .onEach { currencies ->
+                _state.value = state.value.copy(
+                    currencies = currencies.data?.map { (code, name) -> Currency(code, name) }!!
+                )
+            }
+            .launchIn(viewModelScope)
+    }
+
+//    private fun getCurrencyRates() {
+//        getCurrenciesJob?.cancel()
+//        getCurrenciesJob = noteUseCases.getCurrencyRates()
+//            .onEach { currencies ->
+//                _state.value = state.value.copy(
+//                    currencies = currencies.data?.rates?.map { (code, rate) -> Currency(code = code, exchangeRate = rate) }!!
+//                )
+//            }
+//            .launchIn(viewModelScope)
+//    }
 }
